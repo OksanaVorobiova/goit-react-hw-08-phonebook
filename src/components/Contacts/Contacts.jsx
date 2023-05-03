@@ -32,6 +32,8 @@ export default function Contacts() {
   if (isLoading) {
     return (
       <Section>
+        <Form />
+        <Filter />
         <Blocks />
       </Section>
     );
@@ -61,7 +63,7 @@ export default function Contacts() {
         <Filter />
         <ContactList>
           <li>
-            <p>No contacts here yet</p>
+            <p>No contacts</p>
           </li>
         </ContactList>
       </Section>
