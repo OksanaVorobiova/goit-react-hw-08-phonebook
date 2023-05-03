@@ -18,7 +18,6 @@ export default function LoginForm() {
 
     dispatch(login(credentials));
   };
-
   return (
     <FormSection>
       <h2>Log In</h2>
