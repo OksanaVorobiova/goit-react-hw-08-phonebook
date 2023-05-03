@@ -1,23 +1,26 @@
 //import { useState } from 'react';
 //import { Section } from 'components/Section/Section';
 //import { Form } from 'components/Form/Form';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Contacts } from 'components/Contacts/Contacts';
+import { useEffect, lazy } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+//import { Contacts } from 'components/Contacts/Contacts';
 //import { Filter } from 'components/Contacts/Filter/Filter';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import { selectError } from 'redux/contacts/selectors';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
-import { Home } from 'components/Home/Home';
-import { RegisterForm } from 'components/RegisterForm/RegisterForm';
-import { LoginForm } from 'components/LoginForm/LoginForm';
-//import { selectIsLoggedIn } from 'redux/auth/selectors';
+//import { Home } from 'components/Home/Home';
+//import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+//import { LoginForm } from 'components/LoginForm/LoginForm';
 import { PrivateRoute } from 'components/PrivateRoute';
 import { PublicRoute } from 'components/PublicRoute';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { refreshUser } from 'redux/auth/operations';
-//import { redirect } from 'react-router-dom';
+
+const Home = lazy(() => import('../Home/Home'));
+const RegisterForm = lazy(() => import('../RegisterForm/RegisterForm'));
+const LoginForm = lazy(() => import('../LoginForm/LoginForm'));
+const Contacts = lazy(() => import('../Contacts/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();

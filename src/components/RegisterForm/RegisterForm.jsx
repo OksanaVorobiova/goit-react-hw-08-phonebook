@@ -1,7 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
+import { FormSection } from './RegisterForm.styled';
+import { FormStyled } from 'components/Form/Form.styled';
 
-export const RegisterForm = () => {
+export default function RegisterForm() {
   const dispatch = useDispatch();
 
   const handleRegisterClick = e => {
@@ -18,9 +20,9 @@ export const RegisterForm = () => {
   };
 
   return (
-    <section>
+    <FormSection>
       <h2>Register</h2>
-      <form onSubmit={handleRegisterClick}>
+      <FormStyled onSubmit={handleRegisterClick}>
         <label>
           Name
           <input type="text" name="name" required />
@@ -34,7 +36,7 @@ export const RegisterForm = () => {
           <input type="password" name="password" required />
         </label>
         <button type="submit">Register</button>
-      </form>
-    </section>
+      </FormStyled>
+    </FormSection>
   );
-};
+}

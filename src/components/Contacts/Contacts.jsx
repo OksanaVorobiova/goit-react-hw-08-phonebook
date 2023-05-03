@@ -13,7 +13,7 @@ import { Section } from 'components/Section/Section';
 import { Filter } from './Filter/Filter';
 import { Form } from 'components/Form/Form';
 
-export const Contacts = () => {
+export default function Contacts() {
   const contacts = useSelector(selectVisibleContacts);
   const isLoading = useSelector(selectLoading);
   // const filterValue = useSelector(selectFilter);
@@ -30,7 +30,11 @@ export const Contacts = () => {
   };
 
   if (isLoading) {
-    return <Blocks />;
+    return (
+      <Section>
+        <Blocks />
+      </Section>
+    );
   } else if (contacts.length > 0) {
     return (
       <Section>
@@ -63,4 +67,4 @@ export const Contacts = () => {
       </Section>
     );
   }
-};
+}

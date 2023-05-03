@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from 'redux/auth/operations';
 import { useSelector } from 'react-redux';
 import { selectUser, selectIsLoggedIn } from 'redux/auth/selectors';
+import { UserBar } from './UserMenu.styled';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -14,13 +15,13 @@ export const UserMenu = () => {
   };
 
   return (
-    <div>
+    <UserBar>
       <p>Welcome, {isLoggedIn ? user.name : 'Anonymus'} </p>
       {isLoggedIn && (
         <button type="submit" onClick={handleLogOut}>
           Logout
         </button>
       )}
-    </div>
+    </UserBar>
   );
 };

@@ -5,6 +5,10 @@ export const SectionStyled = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  position: relative;
+  top: 50px;
+  height: 100vh;
+  width: 100vw;
 
   h2 {
     margin-bottom: 5px;
